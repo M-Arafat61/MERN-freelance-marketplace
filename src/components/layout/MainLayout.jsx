@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
+import PropTypes from "prop-types";
 
 const MainLayout = ({ children }) => {
   return (
@@ -8,7 +9,7 @@ const MainLayout = ({ children }) => {
       <input id='my-drawer-3' type='checkbox' className='drawer-toggle' />
       <div className='drawer-content flex flex-col'>
         {/* Navbar */}
-        <div className='w-full navbar bg-base-300'>
+        <div className='w-full navbar '>
           <Navbar></Navbar>
         </div>
         {/* Page content here */}
@@ -27,6 +28,9 @@ const MainLayout = ({ children }) => {
       </div>
     </div>
   );
+};
+MainLayout.propTypes = {
+  children: PropTypes.node,
 };
 
 export default MainLayout;

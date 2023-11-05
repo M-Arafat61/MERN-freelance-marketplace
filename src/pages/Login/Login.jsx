@@ -29,8 +29,8 @@ const Login = () => {
       });
   };
   return (
-    <div className='hero min-h-screen border border-red-500'>
-      <div className='hero-content flex-col border border-green-500 w-full md:w-1/2'>
+    <div className='hero min-h-screen '>
+      <div className='hero-content flex-col w-full md:w-1/2'>
         <div className='text-center'>
           <h1 className='text-5xl font-bold'>Welcome back</h1>
           <p className='py-6'>

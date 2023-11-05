@@ -1,9 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import useAuthContext from "../../hooks/useAuthContext";
 
 const Navbar = () => {
+  const { user, logOut } = useAuthContext();
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        console.log("user signed out");
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
   return (
-    <div className='w-full mx-auto '>
-      <div className='flex-none lg:hidden'>
+    <div className='w-full mx-auto p-10'>
+      <div className='flex-none md:hidden'>
         <label
           htmlFor='my-drawer-3'
           aria-label='open sidebar'
@@ -24,25 +36,62 @@ const Navbar = () => {
           </svg>
         </label>
       </div>
-      <div className='flex w-1/2 px-2 border  border-red-400 mx-2'>
-        Tech Jobs
+      <div className='flex items-center '>
+        <img
+          className='w-[70px]'
+          src='https://i.ibb.co/jvfQPjZ/logo.png'
+          alt=''
+        />
+        <p className='text-xl font-bold ml-2'>ITQuester</p>
       </div>
       <div className='flex w-full justify-center items-center'>
-        <div className=' flex-none hidden lg:block border border-blue-400 '>
-          <div className='flex items-center gap-2 justify-between'>
+        <div className=' flex-none hidden md:block'>
+          <div className='flex items-center gap-4 justify-between'>
             {/* Navbar menu content here */}
             <NavLink
               to='/'
               className={({ isActive }) =>
-                isActive ? "btn btn-sm btn-primary" : "btn btn-ghost btn-sm"
+                isActive ? "underline font-bold" : ""
               }
             >
               Home
             </NavLink>
             <NavLink
+              to='/addJob'
+              className={({ isActive }) =>
+                isActive ? "underline font-bold" : ""
+              }
+            >
+              Add job
+            </NavLink>
+            <NavLink
+              to='/myPostedJobs'
+              className={({ isActive }) =>
+                isActive ? "underline font-bold" : ""
+              }
+            >
+              My posted jobs
+            </NavLink>
+            <NavLink
+              to='/myBids'
+              className={({ isActive }) =>
+                isActive ? "underline font-bold" : ""
+              }
+            >
+              My Bids
+            </NavLink>
+            <NavLink
+              to='/bidRequests'
+              className={({ isActive }) =>
+                isActive ? "underline font-bold" : ""
+              }
+            >
+              Bid Requests
+            </NavLink>
+            <NavLink
               to='/login'
               className={({ isActive }) =>
-                isActive ? "btn btn-sm btn-primary" : "btn btn-ghost btn-sm"
+                isActive ? "underline font-bold" : ""
               }
             >
               Login
@@ -51,25 +100,50 @@ const Navbar = () => {
         </div>
       </div>
       <div className='dropdown dropdown-end '>
-        <label tabIndex={0} className='cursor-pointer'>
-          <div className='avatar'>
-            <div className='w-10 rounded-full'>
-              <img src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=1964&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' />
-            </div>
-          </div>
-        </label>
-        <div
-          tabIndex={0}
-          className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'
-        >
-          <NavLink className='px-4 py-2 hover:bg-base-300 rounded-lg'>
-            Profile
-          </NavLink>
+        {user?.photoURL ? (
+          <>
+            <label tabIndex={0} className='cursor-pointer'>
+              <div className='avatar'>
+                <div className='w-12 rounded-full'>
+                  <img src={user.photoURL} />
+                </div>
+              </div>
+            </label>
 
-          <div className='cursor-pointer text-red-500 px-4 py-2 hover:bg-base-300 rounded-lg'>
-            Logout
-          </div>
-        </div>
+            <div
+              tabIndex={0}
+              className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'
+            >
+              <NavLink className='px-4 py-2 hover:bg-base-300 rounded-lg'>
+                {user.displayName}
+              </NavLink>
+
+              <div className='cursor-pointer text-red-500 px-4 py-2 hover:bg-base-300 rounded-lg'>
+                <button onClick={handleLogOut}>Logout</button>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <label tabIndex={0} className='cursor-pointer'>
+              <div className='avatar'>
+                <div className='w-12 rounded-full'>
+                  <img src='https://i.ibb.co/DMX6WRW/profile-remove-svgrepo-com.png' />
+                </div>
+              </div>
+            </label>
+            <div
+              tabIndex={0}
+              className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'
+            >
+              <div className='cursor-pointer text-emerald-500 px-4 py-2 hover:bg-base-300 rounded-lg'>
+                <Link to='/login'>
+                  <button>Login/Register</button>
+                </Link>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
