@@ -6,7 +6,7 @@
     "description": "We are looking for a skilled front-end developer to create amazing user experiences.",
     "minimumPrice": "50000",
     "maximumPrice": "80000",
-    "category": "Web Development"
+    "category": "web-development"
   },
   {
     "email": "arafat@gmail.com",
@@ -15,7 +15,7 @@
     "description": "Join our team to lead digital marketing campaigns and drive brand growth.",
     "minimumPrice": "45000",
     "maximumPrice": "70000",
-    "category": "Digital Marketing"
+    "category": "digital-marketing"
   },
   {
     "email": "arafat@gmail.com",
@@ -24,7 +24,7 @@
     "description": "Create stunning visuals and graphics for various projects and clients.",
     "minimumPrice": "40000",
     "maximumPrice": "65000",
-    "category": "Graphics Design"
+    "category": "graphics-design"
   },
   {
     "email": "arafat@gmail.com",
@@ -33,7 +33,7 @@
     "description": "We need a full-stack developer to build and maintain web applications.",
     "minimumPrice": "55000",
     "maximumPrice": "90000",
-    "category": "Web Development"
+    "category": "web-development"
   },
   {
     "email": "arafat@gmail.com",
@@ -42,7 +42,7 @@
     "description": "Optimize websites for search engines and improve their online visibility.",
     "minimumPrice": "48000",
     "maximumPrice": "75000",
-    "category": "Digital Marketing"
+    "category": "digital-marketing"
   },
   {
     "email": "arafat@gmail.com",
@@ -51,7 +51,7 @@
     "description": "Design user interfaces and experiences for web and mobile applications.",
     "minimumPrice": "45000",
     "maximumPrice": "70000",
-    "category": "Graphics Design"
+    "category": "graphics-design"
   },
   {
     "email": "arafat@gmail.com",
@@ -60,7 +60,7 @@
     "description": "We are seeking a back-end developer to handle server-side development tasks.",
     "minimumPrice": "50000",
     "maximumPrice": "85000",
-    "category": "Web Development"
+    "category": "web-development"
   },
   {
     "email": "arafat@gmail.com",
@@ -69,7 +69,7 @@
     "description": "Manage content marketing strategies and create engaging content.",
     "minimumPrice": "47000",
     "maximumPrice": "72000",
-    "category": "Digital Marketing"
+    "category": "digital-marketing"
   },
   {
     "email": "arafat@gmail.com",
@@ -78,7 +78,7 @@
     "description": "Produce illustrations and artwork for a variety of projects and media.",
     "minimumPrice": "42000",
     "maximumPrice": "68000",
-    "category": "Graphics Design"
+    "category": "graphics-design"
   },
   {
     "email": "arafat@gmail.com",
@@ -87,7 +87,7 @@
     "description": "Specialize in creating and customizing WordPress websites for clients.",
     "minimumPrice": "53000",
     "maximumPrice": "88000",
-    "category": "Web Development"
+    "category": "web-development"
   },
   {
     "email": "arafat@gmail.com",
@@ -96,7 +96,7 @@
     "description": "Manage social media accounts, content, and engagement for brands.",
     "minimumPrice": "49000",
     "maximumPrice": "76000",
-    "category": "Digital Marketing"
+    "category": "digital-marketing"
   },
   {
     "email": "arafat@gmail.com",
@@ -105,6 +105,6 @@
     "description": "Create dynamic motion graphics and animations for various projects.",
     "minimumPrice": "44000",
     "maximumPrice": "70000",
-    "category": "Graphics Design"
+    "category": "graphics-design"
   }
 ]

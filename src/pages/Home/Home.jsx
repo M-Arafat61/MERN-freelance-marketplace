@@ -1,11 +1,13 @@
 import Banner from "./Banner";
-import BrowseByCategory from "./BrowseByCategory";
+
+import Category from "./Category";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <BrowseByCategory></BrowseByCategory>
+
+      <Category></Category>
     </div>
   );
 };
