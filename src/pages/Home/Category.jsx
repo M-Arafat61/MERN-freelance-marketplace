@@ -4,6 +4,7 @@ import "../../pages/Home/styles.css";
 import { useCallback, useEffect, useState } from "react";
 import useAxiosInstance from "../../hooks/useAxiosInstance";
 import { TbHandFinger } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 const Category = () => {
   const [categoriesData, setCategoriesData] = useState([]);
@@ -84,7 +85,7 @@ const Category = () => {
                   <p className='text-xl font-semibold'>{job.title}</p>
                   <div className='flex justify-start gap-10 items-center italic'>
                     <p>
-                      Salary range: ${job.minimumPrice}- ${job.maximumPrice}{" "}
+                      Salary range: ${job.minimumPrice}- ${job.maximumPrice}
                       (yearly)
                     </p>
 
@@ -94,9 +95,11 @@ const Category = () => {
                   <p>{job.description}</p>
 
                   <div className=''>
-                    <button className='flex flex-row items-center text-start text-lg hover:btn-outline'>
-                      Bid now <TbHandFinger className='ml-2' />
-                    </button>
+                    <Link to={`/jobs/${job._id}`}>
+                      <button className='flex flex-row items-center text-start text-lg hover:btn-outline'>
+                        Bid now <TbHandFinger className='ml-2' />
+                      </button>
+                    </Link>
                   </div>
                 </div>
               ))}
