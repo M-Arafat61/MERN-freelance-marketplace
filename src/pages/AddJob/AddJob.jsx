@@ -3,7 +3,7 @@ import useAxiosInstance from "../../hooks/useAxiosInstance";
 
 const AddJob = () => {
   const { user } = useAuthContext();
-  console.log(user?.email);
+
   const axiosInstance = useAxiosInstance();
 
   const handleAddJob = async e => {
