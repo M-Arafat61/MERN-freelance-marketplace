@@ -2,7 +2,7 @@
 
 const Newsletter = () => {
   return (
-    <div className='flex justify-between items-center my-20'>
+    <div className='flex flex-col md:flex-row justify-between items-center gap-10 my-20'>
       <div>
         <img
           src='https://apusthemes.com/wp-demo/superio/wp-content/uploads/2023/07/h22-banner4.png'
