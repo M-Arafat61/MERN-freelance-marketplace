@@ -88,14 +88,25 @@ const Navbar = () => {
             >
               Bid Requests
             </NavLink>
-            <NavLink
-              to='/login'
-              className={({ isActive }) =>
-                isActive ? "underline font-bold" : ""
-              }
-            >
-              Login
-            </NavLink>
+            {user ? (
+              <>
+                <NavLink
+                  to='/login'
+                  className={({ isActive }) =>
+                    isActive ? "underline font-bold" : ""
+                  }
+                ></NavLink>
+              </>
+            ) : (
+              <NavLink
+                to='/login'
+                className={({ isActive }) =>
+                  isActive ? "underline font-bold" : ""
+                }
+              >
+                Login
+              </NavLink>
+            )}
           </div>
         </div>
       </div>
