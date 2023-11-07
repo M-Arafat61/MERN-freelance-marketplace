@@ -10,6 +10,7 @@ import MyBids from "../pages/MyBids/MyBids";
 import MyPostedJobs from "../pages/MyPostedJobs/MyPostedJobs";
 import JobUpdateForm from "../pages/MyPostedJobs/JobUpdateForm";
 import BidRequests from "../pages/BidRequests/BidRequests";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -23,19 +24,35 @@ const router = createBrowserRouter([
       },
       {
         path: "addJob",
-        element: <AddJob></AddJob>,
+        element: (
+          <PrivateRoute>
+            <AddJob></AddJob>
+          </PrivateRoute>
+        ),
       },
       {
         path: "jobs/:id",
-        element: <JobDetails></JobDetails>,
+        element: (
+          <PrivateRoute>
+            <JobDetails></JobDetails>
+          </PrivateRoute>
+        ),
       },
       {
         path: "myBids",
-        element: <MyBids></MyBids>,
+        element: (
+          <PrivateRoute>
+            <MyBids></MyBids>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myPostedJobs",
-        element: <MyPostedJobs></MyPostedJobs>,
+        element: (
+          <PrivateRoute>
+            <MyPostedJobs></MyPostedJobs>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/updateJobInfo/:id",
@@ -43,7 +60,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/bidRequests",
-        element: <BidRequests></BidRequests>,
+        element: (
+          <PrivateRoute>
+            <BidRequests></BidRequests>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/deleteJob",

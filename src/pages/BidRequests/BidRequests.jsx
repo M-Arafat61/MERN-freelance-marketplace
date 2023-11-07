@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import useAuthContext from "../../hooks/useAuthContext";
 import useAxiosInstance from "../../hooks/useAxiosInstance";
 import "react-step-progress-bar/styles.css";
-import { ProgressBar, Step } from "react-step-progress-bar";
+import { ProgressBar } from "react-step-progress-bar";
 
 const BidRequests = () => {
   const [bidRequest, setBidRequest] = useState([]);
@@ -83,9 +83,7 @@ const BidRequests = () => {
                   <td>{bid.userEmail}</td>
                   <td>${bid.amount}</td>
                   <td>{bid.applicationDeadline}</td>
-                  <td
-                    className={bid.status === "accepted" && "text-emerald-500"}
-                  >
+                  <td className={bid.status ? "text-emerald-500" : ""}>
                     {bid.status}
                   </td>
 
@@ -94,8 +92,8 @@ const BidRequests = () => {
                       <>
                         <p>in progress</p>
                         <ProgressBar
-                          filledBackground='linear-gradient(to right, #ffbb00 0%, #ff8800 50%, #ff5500 100%)'
-                          percent={45}
+                          filledBackground='linear-gradient(to right, #ffd966 50%, #ffa826 100%)'
+                          percent={65}
                         />
                       </>
                     )) ||
