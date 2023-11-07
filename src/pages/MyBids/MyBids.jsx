@@ -18,6 +18,17 @@ const MyBids = () => {
     };
     fetchBidedJobs();
   }, [axiosInstance]);
+
+  const handleCompleteJob = async id => {
+    try {
+      const response = await axiosInstance.patch(`/statusComplete/${id}`, {
+        status: "complete",
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   console.log(bidedJobs);
 
   return (
@@ -28,7 +39,7 @@ const MyBids = () => {
             <tr>
               <th></th>
               <th>Job title</th>
-              <th>Email</th>
+              <th>Applicant email</th>
               <th>Deadline</th>
               <th>Status</th>
             </tr>
@@ -40,7 +51,29 @@ const MyBids = () => {
                 <td>{job?.title}</td>
                 <td>{job.userEmail}</td>
                 <td>{job.applicationDeadline}</td>
-                <td>pending</td>
+                <td>
+                  {job.status === "accepted"
+                    ? "In Progress"
+                    : job.status === "rejected"
+                    ? "Canceled"
+                    : job.status === "in progress"
+                    ? "In Progress"
+                    : job.status === "complete"
+                    ? "Complete"
+                    : "Pending"}
+                </td>
+                <td>
+                  {job.status === "accepted" && (
+                    <button
+                      onClick={() => {
+                        console.log(job._id), handleCompleteJob(job._id);
+                      }}
+                      className='btn btn-sm'
+                    >
+                      Complete
+                    </button>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

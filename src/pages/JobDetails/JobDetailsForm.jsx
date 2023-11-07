@@ -16,14 +16,14 @@ const JobDetailsForm = ({ title, email }) => {
     const amount = form.get("amount");
     const applicationDeadline = form.get("date");
     const userEmail = form.get("userEmail");
-    const employeeEmail = form.get("employeeEmail");
+    const email = form.get("employeeEmail");
 
     const jobData = {
       title,
       amount,
       applicationDeadline,
       userEmail,
-      employeeEmail,
+      email,
     };
     try {
       const response = await axiosInstance.post("/appliedJobs", jobData);
