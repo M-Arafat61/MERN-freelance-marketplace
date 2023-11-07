@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import useAuthContext from "../../hooks/useAuthContext";
 import useAxiosInstance from "../../hooks/useAxiosInstance";
+import "react-step-progress-bar/styles.css";
+import { ProgressBar, Step } from "react-step-progress-bar";
 
 const BidRequests = () => {
   const [bidRequest, setBidRequest] = useState([]);
@@ -29,6 +31,13 @@ const BidRequests = () => {
         status: "accepted",
       });
       console.log(response.data);
+      if (response.data.modifiedCount > 0) {
+        const remaining = bidRequest.filter(bids => bids._id !== id);
+        const updated = bidRequest.find(bids => bids._id === id);
+        updated.status = "accepted";
+        const newBidRequest = [updated, ...remaining];
+        setBidRequest(newBidRequest);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -39,6 +48,13 @@ const BidRequests = () => {
         status: "rejected",
       });
       console.log(response.data);
+      if (response.data.modifiedCount > 0) {
+        const remaining = bidRequest.filter(bids => bids._id !== id);
+        const updated = bidRequest.find(bids => bids._id === id);
+        updated.status = "rejected";
+        const newBidRequest = [updated, ...remaining];
+        setBidRequest(newBidRequest);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -56,6 +72,7 @@ const BidRequests = () => {
                 <th>Expected salary</th>
                 <th>Deadline</th>
                 <th>Status</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -66,30 +83,46 @@ const BidRequests = () => {
                   <td>{bid.userEmail}</td>
                   <td>${bid.amount}</td>
                   <td>{bid.applicationDeadline}</td>
-                  <td className='text-red-500'>
-                    {bid.status === "accepted" ? (
-                      "Accepted"
-                    ) : bid.status === "rejected" ? (
-                      "Rejected"
-                    ) : (
-                      <button
-                        onClick={() => handleAcceptBidRequest(bid._id)}
-                        className='btn btn-sm'
-                      >
-                        Accept
-                      </button>
-                    )}
+                  <td
+                    className={bid.status === "accepted" && "text-emerald-500"}
+                  >
+                    {bid.status}
                   </td>
+
                   <td>
-                    {bid.status === "accepted" ||
-                    bid.status === "rejected" ? null : ( // Hide buttons when status is accepted or rejected
-                      <button
-                        onClick={() => handleRejectBidRequest(bid._id)}
-                        className='btn btn-sm'
-                      >
-                        Reject
-                      </button>
-                    )}
+                    {(bid.status === "accepted" && (
+                      <>
+                        <p>in progress</p>
+                        <ProgressBar
+                          filledBackground='linear-gradient(to right, #ffbb00 0%, #ff8800 50%, #ff5500 100%)'
+                          percent={45}
+                        />
+                      </>
+                    )) ||
+                      (bid.status === "complete" && (
+                        <>
+                          <p>completed</p>
+                          <ProgressBar
+                            filledBackground='linear-gradient(to right, #ffd966 50%, #ffa726 100%)'
+                            percent={100}
+                          />
+                        </>
+                      ))}
+                    <button
+                      onClick={() => handleAcceptBidRequest(bid._id)}
+                      className={bid.status ? "hidden" : "btn btn-sm"}
+                    >
+                      Accept
+                    </button>
+                  </td>
+
+                  <td>
+                    <button
+                      onClick={() => handleRejectBidRequest(bid._id)}
+                      className={bid.status ? "hidden" : "btn btn-sm"}
+                    >
+                      Reject
+                    </button>
                   </td>
                 </tr>
               ))}

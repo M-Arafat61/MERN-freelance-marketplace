@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import useAuthContext from "../../hooks/useAuthContext";
 import useAxiosInstance from "../../hooks/useAxiosInstance";
 
 const MyBids = () => {
   const [bidedJobs, setBidedJobs] = useState([]);
   const axiosInstance = useAxiosInstance();
-  const { user } = useAuthContext();
 
   useEffect(() => {
     const fetchBidedJobs = async () => {
@@ -25,6 +23,13 @@ const MyBids = () => {
         status: "complete",
       });
       console.log(response.data);
+      if (response.data.modifiedCount > 0) {
+        const remaining = bidedJobs.filter(bids => bids._id !== id);
+        const updated = bidedJobs.find(bids => bids._id === id);
+        updated.status = "complete";
+        const newBidState = [updated, ...remaining];
+        setBidedJobs(newBidState);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -51,15 +56,13 @@ const MyBids = () => {
                 <td>{job?.title}</td>
                 <td>{job.userEmail}</td>
                 <td>{job.applicationDeadline}</td>
-                <td>
+                <td className={job.status == "complete" && "text-emerald-500"}>
                   {job.status === "accepted"
-                    ? "In Progress"
+                    ? "in progress"
                     : job.status === "rejected"
-                    ? "Canceled"
-                    : job.status === "in progress"
-                    ? "In Progress"
+                    ? "canceled"
                     : job.status === "complete"
-                    ? "Complete"
+                    ? "complete"
                     : "Pending"}
                 </td>
                 <td>
