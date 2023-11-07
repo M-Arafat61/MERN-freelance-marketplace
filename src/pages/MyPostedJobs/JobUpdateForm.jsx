@@ -1,12 +1,13 @@
+import { useParams } from "react-router-dom";
 import useAuthContext from "../../hooks/useAuthContext";
 import useAxiosInstance from "../../hooks/useAxiosInstance";
 
-const AddJob = () => {
+const JobUpdateForm = () => {
   const { user } = useAuthContext();
-
+  const { id } = useParams();
   const axiosInstance = useAxiosInstance();
-
-  const handleAddJob = async e => {
+  console.log(id);
+  const handleJobUpdate = async e => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
@@ -16,7 +17,7 @@ const AddJob = () => {
     const category = form.get("category");
     const minimumPrice = form.get("minimumPrice");
     const maximumPrice = form.get("maximumPrice");
-    const jobData = {
+    const updatedJobInfo = {
       email,
       title,
       deadline,
@@ -25,10 +26,12 @@ const AddJob = () => {
       maximumPrice,
       category,
     };
-    console.log(jobData);
     try {
-      const response = await axiosInstance.post("/addJobs", jobData);
-      console.log(response.data);
+      const response = await axiosInstance.patch(
+        `/updateJob/${id}`,
+        updatedJobInfo
+      );
+      console.log(response);
     } catch (error) {
       console.log(error);
     }
@@ -36,15 +39,8 @@ const AddJob = () => {
   return (
     <div className='hero min-h-screen '>
       <div className='hero-content flex-col w-full md:w-1/2'>
-        <div className='text-start w-full'>
-          <h1 className='text-5xl font-bold'>Add Job</h1>
-          <p className='py-6'>
-            Please enter your info below to create account and get started with
-            us.
-          </p>
-        </div>
         <div className='card flex-shrink-0 w-full '>
-          <form onSubmit={handleAddJob}>
+          <form onSubmit={handleJobUpdate}>
             <div className='form-control'>
               <label className='label'>
                 <span className='label-text'>Email</span>
@@ -141,7 +137,7 @@ const AddJob = () => {
                 className='btn btn-warning rounded-md overflow-hidden input input-bordered'
                 type='submit'
               >
-                Add Job
+                Update Job
               </button>
             </div>
           </form>
@@ -151,4 +147,4 @@ const AddJob = () => {
   );
 };
 
-export default AddJob;
+export default JobUpdateForm;

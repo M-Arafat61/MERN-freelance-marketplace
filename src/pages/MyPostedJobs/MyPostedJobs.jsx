@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import useAxiosInstance from "../../hooks/useAxiosInstance";
-import { Link } from "react-router-dom";
 import useAuthContext from "../../hooks/useAuthContext";
+import HandleJobUpdate from "./HandleJobUpdate";
+import HandleDeleteUpdate from "./HandleDeleteUpdate";
 
 const MyPostedJobs = () => {
   const [myPostedJobs, setMyPostedJobs] = useState([]);
@@ -44,16 +45,8 @@ const MyPostedJobs = () => {
             <p>{myPostedJob.description}</p>
 
             <div className='flex justify-evenly '>
-              <Link>
-                <button className='flex flex-row items-center text-start text-lg btn btn-success rounded-lg'>
-                  Update job
-                </button>
-              </Link>
-              <Link>
-                <button className='flex flex-row items-center text-start text-lg btn btn-warning rounded-lg'>
-                  Delete job
-                </button>
-              </Link>
+              <HandleJobUpdate myPostedJob={myPostedJob}></HandleJobUpdate>
+              <HandleDeleteUpdate></HandleDeleteUpdate>
             </div>
           </div>
         ))

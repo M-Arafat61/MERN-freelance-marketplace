@@ -8,6 +8,7 @@ const instance = axios.create({
 const useAxiosInstance = () => {
   instance.interceptors.response.use(
     function (response) {
+      console.log("from axios", response);
       return response;
     },
     function (error) {

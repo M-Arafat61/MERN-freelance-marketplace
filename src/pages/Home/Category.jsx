@@ -68,7 +68,7 @@ const Category = () => {
                     alt={"category image"}
                   />
                 </div>
-                <p className='text-lg font-bold capitalize'>{category.name}</p>
+                <p className='text-lg font-bold '>{category.name}</p>
               </div>
             </Tab>
           ))}
