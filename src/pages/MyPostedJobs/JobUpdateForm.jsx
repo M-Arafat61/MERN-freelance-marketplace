@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import useAuthContext from "../../hooks/useAuthContext";
 import useAxiosInstance from "../../hooks/useAxiosInstance";
+import toast from "react-hot-toast";
 
 const JobUpdateForm = () => {
   const { user } = useAuthContext();
@@ -32,6 +33,7 @@ const JobUpdateForm = () => {
         updatedJobInfo
       );
       console.log(response);
+      toast.success("Updates successful.");
     } catch (error) {
       console.log(error);
     }

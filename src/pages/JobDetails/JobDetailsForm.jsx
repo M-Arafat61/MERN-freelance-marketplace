@@ -19,6 +19,7 @@ const JobDetailsForm = ({ title, email }) => {
     const employeeEmail = form.get("employeeEmail");
 
     const jobData = {
+      title,
       amount,
       applicationDeadline,
       userEmail,
