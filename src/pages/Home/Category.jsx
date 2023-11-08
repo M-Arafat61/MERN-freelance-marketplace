@@ -97,7 +97,7 @@ const Category = () => {
             <div className='p-2'>
               {jobData?.map(job => (
                 <div
-                  className='border hover:border-amber-500 my-10 p-10 w-full flex flex-col md:flex-row items-start md:items-center justify-between  space-y-2 md:space-y-0 rounded-lg overflow-hidden'
+                  className='border hover:border-teal-500 my-10 p-10 w-full flex flex-col md:flex-row items-start md:items-center justify-between  space-y-2 md:space-y-0 rounded-lg overflow-hidden'
                   key={job._id}
                 >
                   <div className='space-y-2 w-full md:w-3/5 lg:w-3/4'>

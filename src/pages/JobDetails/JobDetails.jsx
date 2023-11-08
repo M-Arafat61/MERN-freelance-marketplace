@@ -31,12 +31,12 @@ const JobDetails = () => {
   }, [id, axiosInstance]);
 
   return (
-    <div className='flex gap-5 my-20'>
+    <div className='flex flex-col md:flex-row gap-5 my-20 p-2 max-w-7xl m-auto'>
       <div className='flex-1'>
         <div className='border rounded-xl overflow-hidden'>
           <div className='space-y-3 border-b p-5'>
             <h3 className='text-2xl font-medium '>{title}</h3>
-            <p>Job posting date {deadline}</p>
+            <p>Deadline {deadline}</p>
             <p>
               Budget ${minimumPrice}-{maximumPrice}
             </p>

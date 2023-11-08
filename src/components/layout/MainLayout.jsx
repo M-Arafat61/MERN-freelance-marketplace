@@ -7,7 +7,7 @@ const MainLayout = ({ children }) => {
     <div className='drawer'>
       <input id='my-drawer-3' type='checkbox' className='drawer-toggle' />
       <div className='drawer-content flex flex-col'>
-        <div className='bg-teal-100 rounded-b-3xl overflow-hidden navbar'>
+        <div className='bg-teal-100 rounded-b-3xl  navbar'>
           <Navbar></Navbar>
         </div>
         {children}
@@ -18,7 +18,7 @@ const MainLayout = ({ children }) => {
           aria-label='close sidebar'
           className='drawer-overlay '
         ></label>
-        <ul className='menu p-4 w-80 min-h-full bg-[#F2FFE9]'>
+        <ul className='menu p-4 w-80 min-h-full bg-teal-100'>
           <Sidebar></Sidebar>
         </ul>
       </div>

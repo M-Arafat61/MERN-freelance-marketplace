@@ -23,8 +23,8 @@ const Banner = () => {
               <p className='italic'>
                 Explore Exciting Career Opportunities with Us
               </p>
-              <hr className='w-full bg-orange-800' />
-              <hr className='w-1/2 mx-auto bg-orange-800' />
+              <hr className='w-full border-teal-100' />
+              <hr className='w-1/2 mx-auto border-teal-100' />
             </div>
           </motion.div>
         </div>

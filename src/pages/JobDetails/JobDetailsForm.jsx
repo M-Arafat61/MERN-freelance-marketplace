@@ -28,7 +28,7 @@ const JobDetailsForm = ({ title, email }) => {
     try {
       const response = await axiosInstance.post("/appliedJobs", jobData);
       console.log(response);
-      toast.success(`Successfully applied for ${title}`);
+      toast.success(`Biding successful for ${title}`);
       navigate("/myBids");
     } catch (error) {
       console.log(error);

@@ -105,7 +105,7 @@ const Navbar = () => {
 
             <div
               tabIndex={0}
-              className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'
+              className='dropdown-content z-[1] menu p-2 shadow bg-teal-100 rounded-box w-52'
             >
               <NavLink className='px-4 py-2 hover:bg-base-300 rounded-lg'>
                 {user.displayName}
@@ -127,7 +127,7 @@ const Navbar = () => {
             </label>
             <div
               tabIndex={0}
-              className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'
+              className='dropdown-content z-[1] menu p-2 shadow bg-teal-100 rounded-box w-52 '
             >
               <div className='cursor-pointer text-emerald-500 px-4 py-2 hover:bg-base-300 rounded-lg'>
                 <Link to='/login'>

@@ -13,7 +13,7 @@ const Sidebar = () => {
         />
       </div>
       <p className=' text-xl font-bold ml-2'>ITQuester</p>
-      <hr className='w-full bg-orange-800'></hr>
+      <hr className='w-full border-black'></hr>
       <li>
         <NavLink
           to='/'

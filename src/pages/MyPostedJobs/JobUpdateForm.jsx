@@ -54,7 +54,6 @@ const JobUpdateForm = () => {
                 defaultValue={user?.email}
                 placeholder='email'
                 className='input input-bordered'
-                required
                 readOnly
               />
             </div>
@@ -67,7 +66,6 @@ const JobUpdateForm = () => {
                 name='title'
                 placeholder='job title'
                 className='input input-bordered'
-                required
               />
             </div>
             <div className='form-control'>
@@ -79,7 +77,6 @@ const JobUpdateForm = () => {
                 type='date'
                 name='date'
                 className='input input-bordered'
-                required
                 id=''
               />
             </div>
@@ -92,7 +89,6 @@ const JobUpdateForm = () => {
                 name='description'
                 placeholder='description'
                 className='input input-bordered'
-                required
               />
             </div>
             <div className='form-control'>
@@ -119,7 +115,6 @@ const JobUpdateForm = () => {
                 placeholder='minimum price'
                 className='input input-bordered'
                 defaultValue={0}
-                required
               />
             </div>
             <div className='form-control'>
@@ -132,12 +127,11 @@ const JobUpdateForm = () => {
                 placeholder='maximum price'
                 className='input input-bordered'
                 defaultValue={0}
-                required
               />
             </div>
             <div className='form-control mt-6'>
               <button
-                className='btn btn-warning rounded-md overflow-hidden input input-bordered'
+                className=' py-2 bg-teal-200 rounded-md capitalize overflow-hidden input input-bordered'
                 type='submit'
               >
                 Update Job

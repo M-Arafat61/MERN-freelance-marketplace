@@ -1,10 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import useAuthContext from "../../hooks/useAuthContext";
 import useAxiosInstance from "../../hooks/useAxiosInstance";
+import toast from "react-hot-toast";
 
 const AddJob = () => {
   document.title = "Form to Add Job Info";
   const { user } = useAuthContext();
-
+  const navigate = useNavigate();
   const axiosInstance = useAxiosInstance();
 
   const handleAddJob = async e => {
@@ -30,12 +32,14 @@ const AddJob = () => {
     try {
       const response = await axiosInstance.post("/addJobs", jobData);
       console.log(response.data);
+      toast.success("Job added to mongodb!");
+      navigate("/myPostedJobs");
     } catch (error) {
       console.log(error);
     }
   };
   return (
-    <div className='hero min-h-screen '>
+    <div className='hero min-h-screen mx-auto max-w-7xl my-5 md:my-10 p-2 md:p-10 lg:my-16 '>
       <div className='hero-content flex-col w-full md:w-1/2'>
         <div className='text-start w-full'>
           <h1 className='text-5xl font-bold'>Add Job</h1>
@@ -139,7 +143,7 @@ const AddJob = () => {
             </div>
             <div className='form-control mt-6'>
               <button
-                className='btn btn-warning rounded-md overflow-hidden input input-bordered'
+                className='py-2 bg-teal-200 rounded-md overflow-hidden input input-bordered'
                 type='submit'
               >
                 Add Job

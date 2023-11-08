@@ -93,7 +93,7 @@ const BidRequests = () => {
                       <>
                         <p>in progress</p>
                         <ProgressBar
-                          filledBackground='linear-gradient(to right, #ffd966 50%, #ffa826 100%)'
+                          filledBackground='linear-gradient(to right, #ffd966 50%, #3DB8D1  100%)'
                           percent={65}
                         />
                       </>
@@ -102,7 +102,7 @@ const BidRequests = () => {
                         <>
                           <p>completed</p>
                           <ProgressBar
-                            filledBackground='linear-gradient(to right, #ffd966 50%, #ffa726 100%)'
+                            filledBackground='linear-gradient(to right, #8FFFFF 50%, #3DB8D1  100%)'
                             percent={100}
                           />
                         </>

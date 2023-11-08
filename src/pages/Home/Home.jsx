@@ -8,7 +8,6 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
-
       <Category></Category>
       <div className='bg-teal-100 rounded-3xl overflow-hidden'>
         <Newsletter></Newsletter>
