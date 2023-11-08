@@ -6,7 +6,7 @@ const HandleJobUpdate = ({ myPostedJob }) => {
   return (
     <div className=''>
       <Link to={`/updateJobInfo/${_id}`}>
-        <button className='btn'>Update Job</button>
+        <button className='btn capitalize rounded-lg'>Update Job</button>
       </Link>
     </div>
   );

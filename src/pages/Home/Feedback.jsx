@@ -3,8 +3,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Feedback = () => {
   return (
-    <div className='m-auto my-28 flex gap-5'>
-      <div className='bg-cyan-500 w-1/2 flex flex-col items-center justify-center rounded-lg overflow-hidden'>
+    <div className='max-w-7xl my-5 md:my-10 p-2 md:p-10 lg:my-16 m-auto flex items-center  flex-col-reverse lg:flex-row gap-5'>
+      <div className=' w-full md:w-3/4 flex flex-col items-center justify-center rounded-lg overflow-hidden'>
         <Carousel
           showStatus={false}
           showThumbs={false}

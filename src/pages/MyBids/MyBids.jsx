@@ -1,21 +1,34 @@
 import { useEffect, useState } from "react";
 import useAxiosInstance from "../../hooks/useAxiosInstance";
+import useAuthContext from "../../hooks/useAuthContext";
 
 const MyBids = () => {
+  document.title = "IT-Quester | Bided Jobs";
   const [bidedJobs, setBidedJobs] = useState([]);
+  const [filterStatus, setFilterStatus] = useState("all");
+  const [sortOrder, setSortOrder] = useState("asc");
+
   const axiosInstance = useAxiosInstance();
+  const { user } = useAuthContext();
 
   useEffect(() => {
     const fetchBidedJobs = async () => {
       try {
-        const response = await axiosInstance.get("/myBids");
+        const queryParams = {
+          email: user?.email,
+          status: filterStatus,
+          sort: sortOrder,
+        };
+        const response = await axiosInstance.get("/myBids", {
+          params: queryParams,
+        });
         setBidedJobs(response.data);
       } catch (error) {
         console.log(error);
       }
     };
     fetchBidedJobs();
-  }, [axiosInstance]);
+  }, [axiosInstance, user?.email, filterStatus, sortOrder]);
 
   const handleCompleteJob = async id => {
     try {
@@ -35,55 +48,98 @@ const MyBids = () => {
     }
   };
   console.log(bidedJobs);
-
+  const handleFilterChange = e => {
+    setFilterStatus(e.target.value);
+  };
+  const handleSortOrderChange = e => {
+    setSortOrder(e.target.value);
+  };
+  console.log(filterStatus);
   return (
-    <div className='my-20'>
-      <div className='overflow-x-auto'>
-        <table className='table table-md'>
-          <thead>
-            <tr>
-              <th></th>
-              <th>Job title</th>
-              <th>Applicant email</th>
-              <th>Deadline</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {bidedJobs.map((job, i) => (
-              <tr key={job._id}>
-                <th>{i + 1}</th>
-                <td>{job?.title}</td>
-                <td>{job.userEmail}</td>
-                <td>{job.applicationDeadline}</td>
-                <td className={job.status == "complete" && "text-emerald-500"}>
-                  {job.status === "accepted"
-                    ? "in progress"
-                    : job.status === "rejected"
-                    ? "canceled"
-                    : job.status === "complete"
-                    ? "complete"
-                    : "Pending"}
-                </td>
-                <td>
-                  {job.status === "accepted" && (
-                    <button
-                      onClick={() => {
-                        console.log(job._id), handleCompleteJob(job._id);
-                      }}
-                      className='btn btn-sm'
-                    >
-                      Complete
-                    </button>
-                  )}
-                </td>
+    <div className=''>
+      <div className='my-20  p-2 mx-auto max-w-7xl'>
+        <div className='flex justify-end gap-10 items-start'>
+          <div className='flex flex-col gap-2'>
+            <label htmlFor='statusFilter' className='text-xl font-semibold'>
+              Filter by Status
+            </label>
+            <select
+              id='statusFilter'
+              value={filterStatus}
+              onChange={handleFilterChange}
+              className='select w-full max-w-xs'
+            >
+              <option value='all'>All</option>
+              <option value='complete'>Completed</option>
+              <option value='rejected'>Rejected</option>
+              <option value='accepted'>Accepted</option>
+              <option value='pending'>Pending</option>
+            </select>
+          </div>
+          <div className='flex flex-col gap-2 '>
+            <label className='text-xl font-semibold' htmlFor='sortOrder'>
+              Sort by
+            </label>
+            <select
+              id='sortOrder'
+              value={sortOrder}
+              onChange={handleSortOrderChange}
+            >
+              <option value='asc'>Ascending</option>
+              <option value='desc'>Descending</option>
+            </select>
+          </div>
+        </div>
+        <div className=''>
+          <table className='table table-md'>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Job title</th>
+                <th>Applicant email</th>
+                <th>Deadline</th>
+                <th>Status</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {bidedJobs.map((job, i) => (
+                <tr key={job._id}>
+                  <th>{i + 1}</th>
+                  <td>{job?.title}</td>
+                  <td>{job.userEmail}</td>
+                  <td>{job.applicationDeadline}</td>
+                  <td className=''>
+                    <p>
+                      {job.status === "accepted"
+                        ? "in progress"
+                        : job.status === "rejected"
+                        ? "canceled"
+                        : job.status === "complete"
+                        ? "complete"
+                        : "Pending"}
+                    </p>
+                  </td>
+                  <td>
+                    {job.status === "accepted" && (
+                      <button
+                        onClick={() => {
+                          console.log(job._id), handleCompleteJob(job._id);
+                        }}
+                        className='btn btn-sm'
+                      >
+                        Complete
+                      </button>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
 };
 
 export default MyBids;
+//

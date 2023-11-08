@@ -5,6 +5,7 @@ import "react-step-progress-bar/styles.css";
 import { ProgressBar } from "react-step-progress-bar";
 
 const BidRequests = () => {
+  document.title = "IT-Quester | Bid Requests";
   const [bidRequest, setBidRequest] = useState([]);
   const axiosInstance = useAxiosInstance();
   const { user } = useAuthContext();
@@ -61,7 +62,7 @@ const BidRequests = () => {
   };
   return (
     <div>
-      <div className='my-20'>
+      <div className='my-20 max-w-7xl p-2 mx-auto'>
         <div className='overflow-x-auto'>
           <table className='table table-md'>
             <thead>
@@ -69,7 +70,7 @@ const BidRequests = () => {
                 <th></th>
                 <th>Job title</th>
                 <th>Applicant email</th>
-                <th>Expected salary</th>
+                <th>Expected amount</th>
                 <th>Deadline</th>
                 <th>Status</th>
                 <th></th>
@@ -108,7 +109,11 @@ const BidRequests = () => {
                       ))}
                     <button
                       onClick={() => handleAcceptBidRequest(bid._id)}
-                      className={bid.status ? "hidden" : "btn btn-sm"}
+                      className={
+                        bid.status
+                          ? "hidden"
+                          : "center rounded-lg  btn btn-sm capitalize shadow-md  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                      }
                     >
                       Accept
                     </button>
@@ -117,7 +122,11 @@ const BidRequests = () => {
                   <td>
                     <button
                       onClick={() => handleRejectBidRequest(bid._id)}
-                      className={bid.status ? "hidden" : "btn btn-sm"}
+                      className={
+                        bid.status
+                          ? "hidden"
+                          : "center rounded-lg bg-teal-500 btn-sm capitalize shadow-md shadow-blue-500/20 transition-all  hover:shadow-teal-400 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                      }
                     >
                       Reject
                     </button>

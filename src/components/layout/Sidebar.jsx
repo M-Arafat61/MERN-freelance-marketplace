@@ -5,6 +5,15 @@ const Sidebar = () => {
   const { user } = useAuthContext();
   return (
     <div className='flex flex-col gap-2'>
+      <div>
+        <img
+          className='w-36'
+          src='https://i.ibb.co/C8C9BTp/it-quester.png'
+          alt=''
+        />
+      </div>
+      <p className=' text-xl font-bold ml-2'>ITQuester</p>
+      <hr className='w-full bg-orange-800'></hr>
       <li>
         <NavLink
           to='/'

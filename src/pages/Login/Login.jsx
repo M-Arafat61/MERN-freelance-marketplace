@@ -5,8 +5,9 @@ import useAuthContext from "../../hooks/useAuthContext";
 import { useState } from "react";
 
 const Login = () => {
+  document.title = "IT-Quester | Login";
   const [error, setError] = useState(null);
-  const { userLogin } = useAuthContext();
+  const { userLogin, googleLogin } = useAuthContext();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -28,6 +29,15 @@ const Login = () => {
         setError("The email/password that you've entered is incorrect.");
       });
   };
+  const handleGooglePopup = () => {
+    googleLogin()
+      .then(res => {
+        console.log(res.user);
+      })
+      .catch(err => {
+        console.log(err.message);
+      });
+  };
   return (
     <div className='hero min-h-screen '>
       <div className='hero-content flex-col w-full md:w-1/2'>
@@ -43,11 +53,13 @@ const Login = () => {
           </p>
         </div>
         <div className='card flex-shrink-0 w-full '>
-          <Link>
-            <button className='btn btn-block rounded-md overflow-hidden'>
-              <FcGoogle className='text-xl' /> Continue with Google
-            </button>
-          </Link>
+          <button
+            onClick={handleGooglePopup}
+            className='btn btn-block rounded-md overflow-hidden'
+          >
+            <FcGoogle className='text-xl' /> Continue with Google
+          </button>
+
           <form onSubmit={handleLogIn}>
             <div className='form-control'>
               <label className='label'>

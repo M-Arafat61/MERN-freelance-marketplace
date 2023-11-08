@@ -17,6 +17,7 @@ const JobDetails = () => {
     skills,
   } = specificJob || {};
 
+  document.title = `Job Post | ${title}`;
   useEffect(() => {
     const fetchSpecificJob = async () => {
       try {
@@ -37,7 +38,7 @@ const JobDetails = () => {
             <h3 className='text-2xl font-medium '>{title}</h3>
             <p>Job posting date {deadline}</p>
             <p>
-              Salary range ${minimumPrice}-{maximumPrice}
+              Budget ${minimumPrice}-{maximumPrice}
             </p>
           </div>
           <div className='my-3 p-5 border-b'>

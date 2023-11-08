@@ -14,35 +14,16 @@ const Navbar = () => {
       });
   };
   return (
-    <div className='w-full mx-auto p-10'>
-      <div className='flex-none md:hidden'>
-        <label
-          htmlFor='my-drawer-3'
-          aria-label='open sidebar'
-          className='btn btn-square btn-ghost'
-        >
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            className='inline-block w-6 h-6 stroke-current'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth='2'
-              d='M4 6h16M4 12h16M4 18h16'
-            ></path>
-          </svg>
-        </label>
-      </div>
-      <div className='flex items-center '>
-        <img
-          className='w-[70px]'
-          src='https://i.ibb.co/jvfQPjZ/logo.png'
-          alt=''
-        />
-        <p className='text-xl font-bold ml-2'>ITQuester</p>
+    <div className='max-w-7xl p-2 md:py-5 flex-grow gap-5 mx-auto'>
+      <div className='flex  md:flex-col lg:flex-row items-center'>
+        <div>
+          <img
+            className='w-52 md:w-36'
+            src='https://i.ibb.co/C8C9BTp/it-quester.png'
+            alt=''
+          />
+        </div>
+        <p className='hidden md:flex text-xl font-bold ml-2'>ITQuester</p>
       </div>
       <div className='flex w-full justify-center items-center'>
         <div className=' flex-none hidden md:block'>
@@ -110,6 +91,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
       <div className='dropdown dropdown-end '>
         {user?.photoURL ? (
           <>
@@ -155,6 +137,39 @@ const Navbar = () => {
             </div>
           </>
         )}
+      </div>
+      <div className=' m-auto md:hidden ml-5'>
+        <label
+          htmlFor='my-drawer-3'
+          aria-label='open sidebar'
+          className='btn btn-square btn-ghost'
+        >
+          <svg
+            width='50px'
+            viewBox='0 0 24 24'
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+          >
+            <path
+              stroke='#000000'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth='1.5'
+              d='M4 5h16M4 19h16'
+            />
+            <rect
+              width='10'
+              height='4'
+              x='7'
+              y='10'
+              stroke='#000000'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth='1'
+              rx='2'
+            />
+          </svg>
+        </label>
       </div>
     </div>
   );

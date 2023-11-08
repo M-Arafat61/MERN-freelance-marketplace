@@ -2,6 +2,7 @@ import useAuthContext from "../../hooks/useAuthContext";
 import useAxiosInstance from "../../hooks/useAxiosInstance";
 
 const AddJob = () => {
+  document.title = "Form to Add Job Info";
   const { user } = useAuthContext();
 
   const axiosInstance = useAxiosInstance();

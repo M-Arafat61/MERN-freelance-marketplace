@@ -4,6 +4,7 @@ import useAxiosInstance from "../../hooks/useAxiosInstance";
 import toast from "react-hot-toast";
 
 const JobUpdateForm = () => {
+  document.title = "IT-Quester | Update Job";
   const { user } = useAuthContext();
   const { id } = useParams();
   const axiosInstance = useAxiosInstance();

@@ -3,108 +3,381 @@
     "email": "arafat@gmail.com",
     "title": "Front-End Developer",
     "deadline": "2023-12-15",
-    "description": "We are looking for a skilled front-end developer to create amazing user experiences.",
-    "minimumPrice": "50000",
-    "maximumPrice": "80000",
-    "category": "web-development"
+    "description": "We are looking for a skilled front-end developer to create amazing user experiences, write clean and efficient code, and work collaboratively with designers and back-end developers to bring web applications to life.",
+    "minimumPrice": "500",
+    "maximumPrice": "800",
+    "category": "web-development",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Front-End Frameworks",
+      "Responsive Design",
+      "UI/UX Principles",
+      "Collaboration"
+    ]
   },
   {
     "email": "arafat@gmail.com",
     "title": "Digital Marketing Specialist",
     "deadline": "2023-11-30",
-    "description": "Join our team to lead digital marketing campaigns and drive brand growth.",
-    "minimumPrice": "45000",
-    "maximumPrice": "70000",
-    "category": "digital-marketing"
+    "description": "Join our team to lead digital marketing campaigns and drive brand growth. You will be responsible for developing, implementing, and managing marketing campaigns across various online channels and platforms.",
+    "minimumPrice": "750",
+    "maximumPrice": "900",
+    "category": "digital-marketing",
+    "skills": [
+      "SEO",
+      "Social Media Marketing",
+      "Content Marketing",
+      "Email Marketing",
+      "Data Analysis",
+      "Campaign Management",
+      "Digital Advertising",
+      "Brand Strategy"
+    ]
   },
   {
     "email": "arafat@gmail.com",
     "title": "Graphic Designer",
     "deadline": "2024-01-10",
-    "description": "Create stunning visuals and graphics for various projects and clients.",
-    "minimumPrice": "40000",
-    "maximumPrice": "65000",
-    "category": "graphics-design"
+    "description": "Create stunning visuals and graphics for various projects and clients. As a graphic designer, you will be responsible for translating ideas into visual concepts and producing high-quality designs.",
+    "minimumPrice": "400",
+    "maximumPrice": "750",
+    "category": "graphics-design",
+    "skills": [
+      "Adobe Creative Suite",
+      "Illustration",
+      "Typography",
+      "Branding",
+      "Layout Design",
+      "Color Theory",
+      "Creativity",
+      "Communication"
+    ]
   },
   {
     "email": "arafat@gmail.com",
     "title": "Full-Stack Developer",
     "deadline": "2023-12-20",
-    "description": "We need a full-stack developer to build and maintain web applications.",
-    "minimumPrice": "55000",
-    "maximumPrice": "90000",
-    "category": "web-development"
+    "description": "We need a full-stack developer to build and maintain web applications. Your responsibilities include designing user interactions on websites, developing servers and databases for website functionality, and ensuring cross-functionality and performance.",
+    "minimumPrice": "575",
+    "maximumPrice": "900",
+    "category": "web-development",
+    "skills": [
+      "Front-End Development",
+      "Back-End Development",
+      "Database Management",
+      "API Integration",
+      "JavaScript",
+      "Node.js",
+      "React",
+      "Team Collaboration"
+    ]
   },
   {
     "email": "arafat@gmail.com",
-    "title": "SEO Specialist",
+    "title": "SEO Specialist ",
     "deadline": "2023-11-25",
-    "description": "Optimize websites for search engines and improve their online visibility.",
-    "minimumPrice": "48000",
-    "maximumPrice": "75000",
-    "category": "digital-marketing"
+    "description": "Optimize websites for search engines and improve their online visibility. As an SEO specialist, you'll conduct keyword research, implement SEO strategies, and analyze website performance.",
+    "minimumPrice": "500",
+    "maximumPrice": "600",
+    "category": "digital-marketing",
+    "skills": [
+      "Keyword Research",
+      "On-Page SEO",
+      "Off-Page SEO",
+      "Technical SEO",
+      "SEO Tools",
+      "Analytics",
+      "Content Optimization",
+      "Problem Solving"
+    ]
   },
   {
     "email": "arafat@gmail.com",
-    "title": "UI/UX Designer",
+    "title": "UI/UX Designer ",
     "deadline": "2024-01-05",
-    "description": "Design user interfaces and experiences for web and mobile applications.",
-    "minimumPrice": "45000",
-    "maximumPrice": "70000",
-    "category": "graphics-design"
+    "description": "Design user interfaces and experiences for web and mobile applications. You'll focus on creating intuitive and visually appealing user interfaces, conducting user research, and collaborating with development teams.",
+    "minimumPrice": "750",
+    "maximumPrice": "800",
+    "category": "graphics-design",
+    "skills": [
+      "User Research",
+      "Wireframing",
+      "Prototyping",
+      "Visual Design",
+      "Usability Testing",
+      "UI/UX Principles",
+      "Collaboration",
+      "Problem Solving"
+    ]
   },
   {
     "email": "arafat@gmail.com",
     "title": "Back-End Developer",
     "deadline": "2023-12-10",
-    "description": "We are seeking a back-end developer to handle server-side development tasks.",
-    "minimumPrice": "50000",
-    "maximumPrice": "85000",
-    "category": "web-development"
+    "description": "We are seeking a back-end developer to handle server-side development tasks. Your responsibilities include server-side scripting, database integration, and ensuring web server and website performance.",
+    "minimumPrice": "800",
+    "maximumPrice": "900",
+    "category": "web-development",
+    "skills": [
+      "Server-Side Scripting",
+      "Database Management",
+      "API Development",
+      "Performance Optimization",
+      "Security",
+      "Collaboration",
+      "Problem Solving",
+      "Node.js"
+    ]
   },
   {
     "email": "arafat@gmail.com",
-    "title": "Content Marketing Manager",
+    "title": "Content Marketing Manager ",
     "deadline": "2023-11-28",
-    "description": "Manage content marketing strategies and create engaging content.",
-    "minimumPrice": "47000",
-    "maximumPrice": "72000",
-    "category": "digital-marketing"
+    "description": "Manage content marketing strategies and create engaging content. As a content marketing manager, you will develop, implement, and oversee marketing content initiatives and campaigns.",
+    "minimumPrice": "470",
+    "maximumPrice": "720",
+    "category": "digital-marketing",
+    "skills": [
+      "Content Strategy",
+      "Content Creation",
+      "Social Media Marketing",
+      "Email Marketing",
+      "Analytics",
+      "Team Leadership",
+      "Communication",
+      "Problem Solving"
+    ]
   },
   {
     "email": "arafat@gmail.com",
     "title": "Illustrator",
     "deadline": "2024-01-15",
-    "description": "Produce illustrations and artwork for a variety of projects and media.",
-    "minimumPrice": "42000",
-    "maximumPrice": "68000",
-    "category": "graphics-design"
+    "description": "Produce illustrations and artwork for a variety of projects and media. As an illustrator, you'll use your artistic skills to create visual content that communicates stories, ideas, and messages.",
+    "minimumPrice": "420",
+    "maximumPrice": "680",
+    "category": "graphics-design",
+    "skills": [
+      "Illustration",
+      "Digital Art",
+      "Storytelling",
+      "Creativity",
+      "Communication",
+      "Adobe Illustrator",
+      "Problem Solving",
+      "Attention to Detail"
+    ]
   },
   {
     "email": "arafat@gmail.com",
-    "title": "WordPress Developer",
+    "title": "WordPress Developer ",
     "deadline": "2023-12-18",
-    "description": "Specialize in creating and customizing WordPress websites for clients.",
-    "minimumPrice": "53000",
-    "maximumPrice": "88000",
-    "category": "web-development"
+    "description": "Specialize in creating and customizing WordPress websites for clients. As a WordPress developer, you will be responsible for building, maintaining, and customizing WordPress websites to meet client requirements.",
+    "minimumPrice": "530",
+    "maximumPrice": "880",
+    "category": "web-development",
+    "skills": [
+      "WordPress Development",
+      "Theme Customization",
+      "Plugin Development",
+
+      "PHP",
+      "Collaboration",
+      "Problem Solving",
+      "Client Communication",
+      "Web Security"
+    ]
   },
   {
     "email": "arafat@gmail.com",
-    "title": "Social Media Manager",
+    "title": "Social Media Manager ",
     "deadline": "2023-11-23",
-    "description": "Manage social media accounts, content, and engagement for brands.",
-    "minimumPrice": "49000",
-    "maximumPrice": "76000",
-    "category": "digital-marketing"
+    "description": "Manage social media accounts, content, and engagement for brands. You will oversee and implement social media marketing strategies, content creation, and community management for various brands.",
+    "minimumPrice": "490",
+    "maximumPrice": "760",
+    "category": "digital-marketing",
+    "skills": [
+      "Social Media Strategy",
+      "Content Creation",
+      "Community Management",
+      "Analytics",
+      "Branding",
+      "Collaboration",
+      "Problem Solving",
+      "Customer Engagement"
+    ]
   },
   {
     "email": "arafat@gmail.com",
-    "title": "Motion Graphics Artist",
+    "title": "Motion Graphics Artist ",
     "deadline": "2024-01-20",
-    "description": "Create dynamic motion graphics and animations for various projects.",
-    "minimumPrice": "44000",
-    "maximumPrice": "70000",
-    "category": "graphics-design"
+    "description": "Create dynamic motion graphics and animations for various projects. As a motion graphics artist, you'll use your creativity to produce visually appealing animations for different projects and media.",
+    "minimumPrice": "440",
+    "maximumPrice": "700",
+    "category": "graphics-design",
+    "skills": [
+      "Motion Graphics",
+      "Animation",
+      "Video Editing",
+      "Adobe After Effects",
+      "Creativity",
+      "Communication",
+      "Problem Solving",
+      "Attention to Detail"
+    ]
+  },
+  {
+    "email": "userone@gmail.com",
+    "title": "Front-End Developer ",
+    "deadline": "2023-12-15",
+    "description": "We are looking for a skilled front-end developer to create amazing user experiences, write clean and efficient code, and work collaboratively with designers and back-end developers to bring web applications to life.",
+    "minimumPrice": "500",
+    "maximumPrice": "700",
+    "category": "web-development",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Front-End Frameworks",
+      "Responsive Design",
+      "UI/UX Principles",
+      "Collaboration"
+    ]
+  },
+  {
+    "email": "userone@gmail.com",
+    "title": "Digital Marketing Specialist ",
+    "deadline": "2023-11-30",
+    "description": "Join our team to lead digital marketing campaigns and drive brand growth. You will be responsible for developing, implementing, and managing marketing campaigns across various online channels and platforms.",
+    "minimumPrice": "700",
+    "maximumPrice": "800",
+    "category": "digital-marketing",
+    "skills": [
+      "SEO",
+      "Social Media Marketing",
+      "Content Marketing",
+      "Email Marketing",
+      "Data Analysis",
+      "Campaign Management",
+      "Digital Advertising",
+      "Brand Strategy"
+    ]
+  },
+  {
+    "email": "userone@gmail.com",
+    "title": "Graphic Designer ",
+    "deadline": "2024-01-10",
+    "description": "Create stunning visuals and graphics for various projects and clients. As a graphic designer, you will be responsible for translating ideas into visual concepts and producing high-quality designs.",
+    "minimumPrice": "500",
+    "maximumPrice": "700",
+    "category": "graphics-design",
+    "skills": [
+      "Adobe Creative Suite",
+      "Illustration",
+      "Typography",
+      "Branding",
+      "Layout Design",
+      "Color Theory",
+      "Creativity",
+      "Communication"
+    ]
+  },
+  {
+    "email": "userone@gmail.com",
+    "title": "Full-Stack Developer ",
+    "deadline": "2023-12-20",
+    "description": "We need a full-stack developer to build and maintain web applications. Your responsibilities include designing user interactions on websites, developing servers and databases for website functionality, and ensuring cross-functionality and performance.",
+    "minimumPrice": "700",
+    "maximumPrice": "800",
+    "category": "web-development",
+    "skills": [
+      "Front-End Development",
+      "Back-End Development",
+      "Database Management",
+      "API Integration",
+      "JavaScript",
+      "Node.js",
+      "React",
+      "Team Collaboration"
+    ]
+  },
+  {
+    "email": "userone@gmail.com",
+    "title": "SEO Specialist ",
+    "deadline": "2023-11-25",
+    "description": "Optimize websites for search engines and improve their online visibility. As an SEO specialist, you'll conduct keyword research, implement SEO strategies, and analyze website performance.",
+    "minimumPrice": "500",
+    "maximumPrice": "700",
+    "category": "digital-marketing",
+    "skills": [
+      "Keyword Research",
+      "On-Page SEO",
+      "Off-Page SEO",
+      "Technical SEO",
+      "SEO Tools",
+      "Analytics",
+      "Content Optimization",
+      "Problem Solving"
+    ]
+  },
+  {
+    "email": "userone@gmail.com",
+    "title": "UI/UX Designer ",
+    "deadline": "2024-01-05",
+    "description": "Design user interfaces and experiences for web and mobile applications. You'll focus on creating intuitive and visually appealing user interfaces, conducting user research, and collaborating with development teams.",
+    "minimumPrice": "700",
+    "maximumPrice": "800",
+    "category": "graphics-design",
+    "skills": [
+      "User Research",
+      "Wireframing",
+      "Prototyping",
+      "Visual Design",
+      "Usability Testing",
+      "UI/UX Principles",
+      "Collaboration",
+      "Problem Solving"
+    ]
+  },
+  {
+    "email": "userone@gmail.com",
+    "title": "Back-End Developer ",
+    "deadline": "2023-12-10",
+    "description": "We are seeking a back-end developer to handle server-side development tasks. Your responsibilities include server-side scripting, database integration, and ensuring web server and website performance.",
+    "minimumPrice": "500",
+    "maximumPrice": "700",
+    "category": "web-development",
+    "skills": [
+      "Server-Side Scripting",
+      "Database Management",
+      "API Development",
+      "Performance Optimization",
+      "Security",
+      "Collaboration",
+      "Problem Solving",
+      "Node.js"
+    ]
+  },
+  {
+    "email": "userone@gmail.com",
+    "title": "Content Marketing Manager ",
+    "deadline": "2023-11-28",
+    "description": "Manage content marketing strategies and create engaging content. As a content marketing manager, you will develop, implement, and oversee marketing content initiatives and campaigns.",
+    "minimumPrice": "700",
+    "maximumPrice": "800",
+    "category": "digital-marketing",
+    "skills": [
+      "Content Strategy",
+      "Content Creation",
+      "Social Media Marketing",
+      "Email Marketing",
+      "Analytics",
+      "Team Leadership",
+      "Communication",
+      "Problem Solving"
+    ]
   }
 ]
