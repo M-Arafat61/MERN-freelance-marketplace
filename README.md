@@ -1,6 +1,6 @@
 # Project IT Quester
 
-## Hosting URL: <>
+## Hosting URL: <https://dream-tech-jobs.web.app/>
 
 #### IT Quester is an job marketplace where from a verified user can post job, manage posted jobs bids/applications, accept/reject bids and much more.
 
