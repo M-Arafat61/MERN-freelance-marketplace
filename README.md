@@ -10,7 +10,7 @@
 
 ### 1. `Home page` contains category based jobs as named _Digital Marketing, Web Development, Graphics Design_. By clicking any category shows Jobs under that category from mongodb database.
 
-### 2. Each job contains a _Bid now_ button that takes the user to Job Details page where from a user can `bid job` by giving some information. User who posts the Job can not bid on his/her job.
+### 2. Each job contains a _Bid now_ button that takes the user to Job Details page where from a user can `bid job` by giving some information.If users current `bidding date` `exceeds Job Deadline`, user won't be able to bid the job. User who posts the Job _can not bid on his/her job_.
 
 ### 3. Add Job page contains form to add job, after adding the job, job data gets stored in database. Home Page's category wise Jobs are these added Jobs.
 
