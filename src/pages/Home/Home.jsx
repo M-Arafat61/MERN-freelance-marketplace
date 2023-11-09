@@ -13,8 +13,6 @@ const Home = () => {
         <Newsletter></Newsletter>
       </div>
       <Feedback></Feedback>
-
-      <div></div>
     </div>
   );
 };

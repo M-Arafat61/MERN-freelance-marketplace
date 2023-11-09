@@ -72,21 +72,20 @@ const AuthProvider = ({ children }) => {
           }
         };
         fetchJwt();
+      } else {
+        const fetchLogout = async () => {
+          try {
+            const response = await axiosInstance.post(
+              "/auth/logout",
+              loggedUser
+            );
+            console.log(response.data);
+          } catch (error) {
+            console.log(error);
+          }
+        };
+        fetchLogout();
       }
-      // } else {
-      //   const fetchLogout = async () => {
-      //     try {
-      //       const response = await axiosInstance.post(
-      //         "/auth/logout",
-      //         loggedUser
-      //       );
-      //       console.log(response);
-      //     } catch (error) {
-      //       console.log(error);
-      //     }
-      //   };
-      //   fetchLogout();
-      // }
     });
     return () => {
       unsubscribe();

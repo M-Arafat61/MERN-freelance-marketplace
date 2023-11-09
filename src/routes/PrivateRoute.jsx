@@ -1,10 +1,11 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import useAuthContext from "../hooks/useAuthContext";
 import PropTypes from "prop-types";
 import { RiseLoader } from "react-spinners";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useAuthContext();
+  const location = useLocation();
   if (loading) {
     return (
       <RiseLoader
@@ -17,7 +18,7 @@ const PrivateRoute = ({ children }) => {
   if (user?.email) {
     return children;
   }
-  return <Navigate to='/login' replace></Navigate>;
+  return <Navigate state={location.pathname} to='/login' replace></Navigate>;
 };
 
 PrivateRoute.propTypes = {

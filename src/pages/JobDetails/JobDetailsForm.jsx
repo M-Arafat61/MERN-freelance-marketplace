@@ -4,11 +4,13 @@ import useAxiosInstance from "../../hooks/useAxiosInstance";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-const JobDetailsForm = ({ title, email }) => {
+const JobDetailsForm = ({ title, email, deadline }) => {
   const { user } = useAuthContext();
 
   const axiosInstance = useAxiosInstance();
   const navigate = useNavigate();
+  const jobDeadline = new Date(deadline);
+  const currentDate = new Date();
 
   const handleJobApply = async e => {
     e.preventDefault();
@@ -34,6 +36,8 @@ const JobDetailsForm = ({ title, email }) => {
       console.log(error);
     }
   };
+  console.log(jobDeadline);
+  console.log(currentDate);
 
   return (
     <div>
@@ -93,16 +97,23 @@ const JobDetailsForm = ({ title, email }) => {
               readOnly
             />
           </div>
-
-          <div className='form-control mt-6'>
-            <button
-              className='capitalize btn btn-warning rounded-md overflow-hidden input input-bordered'
-              type='submit'
-              disabled={user?.email === email}
-            >
-              Apply/Bid Now
-            </button>
-          </div>
+          {jobDeadline < currentDate ? (
+            <p className='text-red-400 mt-5 text-lg'>
+              Sorry,this job is no longer available as deadline exceeds!
+            </p>
+          ) : (
+            <>
+              <div className='form-control mt-6'>
+                <button
+                  className='capitalize py-3 bg-teal-200 rounded-lg font-medium overflow-hidden  input input-bordered'
+                  type='submit'
+                  disabled={user?.email === email}
+                >
+                  Apply/Bid Now
+                </button>
+              </div>
+            </>
+          )}
         </form>
       </div>
     </div>
@@ -111,5 +122,6 @@ const JobDetailsForm = ({ title, email }) => {
 JobDetailsForm.propTypes = {
   email: PropTypes.string,
   title: PropTypes.string,
+  deadline: PropTypes.string,
 };
 export default JobDetailsForm;

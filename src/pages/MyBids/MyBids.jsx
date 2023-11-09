@@ -70,9 +70,9 @@ const MyBids = () => {
               className='select w-full max-w-xs'
             >
               <option value='all'>All</option>
-              <option value='complete'>Completed</option>
-              <option value='rejected'>Rejected</option>
-              <option value='accepted'>Accepted</option>
+              <option value='complete'>Complete</option>
+              <option value='rejected'>Canceled</option>
+              <option value='accepted'>In Progress</option>
               <option value='pending'>Pending</option>
             </select>
           </div>
@@ -90,52 +90,51 @@ const MyBids = () => {
             </select>
           </div>
         </div>
-        <div className=''>
-          <table className='table table-md'>
-            <thead>
-              <tr>
-                <th></th>
-                <th>Job title</th>
-                <th>Applicant email</th>
-                <th>Deadline</th>
-                <th>Status</th>
+
+        <table className='mx-auto table-xs md:table-lg'>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Job title</th>
+              <th>Applicant email</th>
+              <th>Deadline</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {bidedJobs.map((job, i) => (
+              <tr key={job._id}>
+                <th>{i + 1}</th>
+                <td>{job?.title}</td>
+                <td>{job.userEmail}</td>
+                <td>{job.applicationDeadline}</td>
+                <td className=''>
+                  <p>
+                    {job.status === "accepted"
+                      ? "in progress"
+                      : job.status === "rejected"
+                      ? "canceled"
+                      : job.status === "complete"
+                      ? "complete"
+                      : "Pending"}
+                  </p>
+                </td>
+                <td>
+                  {job.status === "accepted" && (
+                    <button
+                      onClick={() => {
+                        console.log(job._id), handleCompleteJob(job._id);
+                      }}
+                      className='btn btn-sm capitalize rounded-l-2xl'
+                    >
+                      Complete
+                    </button>
+                  )}
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {bidedJobs.map((job, i) => (
-                <tr key={job._id}>
-                  <th>{i + 1}</th>
-                  <td>{job?.title}</td>
-                  <td>{job.userEmail}</td>
-                  <td>{job.applicationDeadline}</td>
-                  <td className=''>
-                    <p>
-                      {job.status === "accepted"
-                        ? "in progress"
-                        : job.status === "rejected"
-                        ? "canceled"
-                        : job.status === "complete"
-                        ? "complete"
-                        : "Pending"}
-                    </p>
-                  </td>
-                  <td>
-                    {job.status === "accepted" && (
-                      <button
-                        onClick={() => {
-                          console.log(job._id), handleCompleteJob(job._id);
-                        }}
-                        className='btn btn-sm'
-                      >
-                        Complete
-                      </button>
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

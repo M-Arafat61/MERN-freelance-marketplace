@@ -89,14 +89,17 @@ const Register = () => {
             </div>
             <div className='flex justify-between w-full gap-2'>
               <div className='form-control mt-6 w-1/2'>
-                <button type='reset' className='btn  font-bold w-full'>
+                <button
+                  type='reset'
+                  className='py-3 bg-yellow-200 font-bold w-full'
+                >
                   Cancel
                 </button>
               </div>
               <div className='form-control mt-6 w-1/2'>
                 <button
                   type='submit'
-                  className='btn btn-warning font-bold w-full'
+                  className='py-3 bg-teal-200 font-bold w-full'
                 >
                   Confirm
                 </button>

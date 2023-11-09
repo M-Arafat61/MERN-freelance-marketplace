@@ -56,7 +56,7 @@ const JobDetails = () => {
       </div>
       <div className='flex-1 border  rounded-xl overflow-hidden'>
         <div className='p-5'>
-          <JobDetailsForm title={title} email={email} />
+          <JobDetailsForm title={title} email={email} deadline={deadline} />
         </div>
       </div>
     </div>

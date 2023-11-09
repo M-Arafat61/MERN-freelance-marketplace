@@ -7,12 +7,10 @@ import AuthProvider from "./providers/AuthProvider.jsx";
 import { Toaster } from "react-hot-toast";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <div>
-    <React.StrictMode>
-      <AuthProvider>
-        <RouterProvider router={router}></RouterProvider>
-      </AuthProvider>
-      <Toaster />
-    </React.StrictMode>
-  </div>
+  <React.StrictMode>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
+    <Toaster />
+  </React.StrictMode>
 );

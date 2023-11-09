@@ -26,7 +26,7 @@ const Newsletter = () => {
             placeholder='Email'
             className='input input-bordered w-80 '
           />
-          <button className='absolute btn-md flex flex-row items-center text-start "middle none text-base-200 center rounded-l-lg bg-teal-500 py-3 px-6 font-sans  font-bold capitalize shadow-md shadow-blue-500/20 transition-all  hover:shadow-teal-300 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'>
+          <button className='absolute btn-md flex flex-row items-center text-start "middle none text-base-200 center rounded-l-lg bg-teal-400 py-3 px-6 font-sans  font-bold capitalize shadow-md shadow-blue-500/20 transition-all  hover:shadow-teal-300 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'>
             Subscribe
           </button>
         </div>

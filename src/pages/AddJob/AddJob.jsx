@@ -39,7 +39,7 @@ const AddJob = () => {
     }
   };
   return (
-    <div className='hero min-h-screen mx-auto max-w-7xl my-5 md:my-10 p-2 md:p-10 lg:my-16 '>
+    <div className='hero min-h-screen mx-auto max-w-7xl my-20 p-2 md:p-10 '>
       <div className='hero-content flex-col w-full md:w-1/2'>
         <div className='text-start w-full'>
           <h1 className='text-5xl font-bold'>Add Job</h1>

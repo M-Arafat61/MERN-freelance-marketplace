@@ -18,6 +18,6 @@
 
 - #### From this page user can `Update` information of specific job also can `Delete` the Job.
 
-### 5. Bid Requests page contains jobs Bided by other users. User who posted the Job can only `Accept or Reject Job requests`.
+### 5. My Bids page contain Jobs those were `posted by the logged user` & was `bided/applied by other users` with status pending,rejected and in progress. In progress Jobs have a button complete, User who posted the Job can change the status as complete.
 
-### 6. My Bids page contain Jobs with status pending,rejected and in progress. In progress Jobs have a button complete, User who posted the Job can change the status as complete.
+### 6. Bid Requests page contains jobs `Bided by other users`. User who posted the Job can only `Accept or Reject Job requests`.From Bid Request pages `accepted or rejected status` gets updated in `My Bids` page with _`updated status`_.

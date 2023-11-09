@@ -64,7 +64,7 @@ const MyPostedJobs = () => {
   };
 
   return (
-    <div className='max-w-7xl m-auto p-2 grid grid-cols-2 gap-5 my-5 md:my-10 lg:my-16'>
+    <div className='max-w-7xl m-auto p-2 grid grid-cols-1 md:grid-cols-2 gap-5 my-20'>
       {myPostedJobs.map(myPostedJob => (
         <div
           className='border hover:border-teal-500 p-10 w-full flex flex-col  space-y-2 rounded-lg overflow-hidden'

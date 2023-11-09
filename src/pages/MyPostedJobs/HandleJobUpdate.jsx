@@ -6,7 +6,9 @@ const HandleJobUpdate = ({ myPostedJob }) => {
   return (
     <div className=''>
       <Link to={`/updateJobInfo/${_id}`}>
-        <button className='btn capitalize rounded-lg'>Update Job</button>
+        <button className='bg-teal-200 py-3 px-4 capitalize rounded-lg'>
+          Update Job
+        </button>
       </Link>
     </div>
   );
