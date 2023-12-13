@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 const instance = axios.create({
-  // baseURL: "https://dream-tech-server-ten.vercel.app/api/v1",
-  baseURL: "http://localhost:5000/api/v1",
+  baseURL: "https://dream-tech-server-ten.vercel.app/api/v1",
+  // baseURL: "http://localhost:5000/api/v1",
   withCredentials: true,
 });
 
@@ -16,7 +16,7 @@ const useAxiosInstance = () => {
   useEffect(() => {
     instance.interceptors.response.use(
       function (response) {
-        console.log("from axios", response);
+        // console.log("from axios", response);
         return response;
       },
       function (error) {

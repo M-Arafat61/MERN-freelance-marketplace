@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import useAxiosInstance from "../../hooks/useAxiosInstance";
 import useAuthContext from "../../hooks/useAuthContext";
+import { Link } from "react-router-dom";
 
 const MyBids = () => {
-  document.title = "IT-Quester | Bided Jobs";
+  document.title = "JobHub | Bided Jobs";
   const [bidedJobs, setBidedJobs] = useState([]);
   // const [filterStatus, setFilterStatus] = useState("all");
   // const [sortOrder, setSortOrder] = useState("asc");
@@ -84,50 +85,61 @@ const MyBids = () => {
           </div>
         </div>
 
-        <table className='mx-auto table-xs md:table-lg'>
-          <thead>
-            <tr>
-              <th></th>
-              <th>Job title</th>
-              <th>Applicant email</th>
-              <th>Deadline</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {bidedJobs.map((job, i) => (
-              <tr key={job._id}>
-                <th>{i + 1}</th>
-                <td>{job?.title}</td>
-                <td>{job.userEmail}</td>
-                <td>{job.applicationDeadline}</td>
-                <td className=''>
-                  <p>
-                    {job.status === "accepted"
-                      ? "in progress"
-                      : job.status === "rejected"
-                      ? "canceled"
-                      : job.status === "complete"
-                      ? "complete"
-                      : "Pending"}
-                  </p>
-                </td>
-                <td>
-                  {job.status === "accepted" && (
-                    <button
-                      onClick={() => {
-                        console.log(job._id), handleCompleteJob(job._id);
-                      }}
-                      className='btn btn-sm capitalize rounded-l-2xl'
-                    >
-                      Complete
-                    </button>
-                  )}
-                </td>
+        {bidedJobs.length > 0 ? (
+          <table className='mx-auto table-xs md:table-lg'>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Job title</th>
+                <th>Applicant email</th>
+                <th>Deadline</th>
+                <th>Status</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody>
+              {bidedJobs.map((job, i) => (
+                <tr key={job._id}>
+                  <th>{i + 1}</th>
+                  <td>{job?.title}</td>
+                  <td>{job.userEmail}</td>
+                  <td>{job.applicationDeadline}</td>
+                  <td className=''>
+                    <p>
+                      {job.status === "accepted"
+                        ? "in progress"
+                        : job.status === "rejected"
+                        ? "canceled"
+                        : job.status === "complete"
+                        ? "complete"
+                        : "Pending"}
+                    </p>
+                  </td>
+                  <td>
+                    {job.status === "accepted" && (
+                      <button
+                        onClick={() => {
+                          console.log(job._id), handleCompleteJob(job._id);
+                        }}
+                        className='btn btn-sm capitalize rounded-l-2xl'
+                      >
+                        Complete
+                      </button>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <div className='text-2xl text-center col-span-2 mt-28'>
+            Please
+            <Link to='/'>
+              <span className='text-emerald-500'> Bid Now </span>
+            </Link>
+            to see Your Bids.
+          </div>
+        )}
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import useAuthContext from "../../hooks/useAuthContext";
 import HandleJobUpdate from "./HandleJobUpdate";
 import HandleJobDelete from "./HandleJobDelete";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyPostedJobs = () => {
   document.title = "User Specific Jobs";
@@ -65,31 +66,41 @@ const MyPostedJobs = () => {
 
   return (
     <div className='max-w-7xl m-auto p-2 grid grid-cols-1 md:grid-cols-2 gap-5 my-20'>
-      {myPostedJobs.map(myPostedJob => (
-        <div
-          className='border hover:border-teal-500 p-10 w-full flex flex-col  space-y-2 rounded-lg overflow-hidden'
-          key={myPostedJob._id}
-        >
-          <p className='text-xl font-semibold'>{myPostedJob.title}</p>
-          <div className='flex justify-start gap-10 items-center'>
-            <p>
-              Budget ${myPostedJob.minimumPrice}- ${myPostedJob.maximumPrice}
-            </p>
+      {myPostedJobs.length > 0 ? (
+        myPostedJobs.map(myPostedJob => (
+          <div
+            className='border hover:border-teal-500 p-10 w-full flex flex-col  space-y-2 rounded-lg overflow-hidden'
+            key={myPostedJob._id}
+          >
+            <p className='text-xl font-semibold'>{myPostedJob.title}</p>
+            <div className='flex justify-start gap-10 items-center'>
+              <p>
+                Budget ${myPostedJob.minimumPrice}- ${myPostedJob.maximumPrice}
+              </p>
 
-            <p>Deadline {myPostedJob.deadline}</p>
+              <p>Deadline {myPostedJob.deadline}</p>
+            </div>
+
+            <p>{myPostedJob.description}</p>
+
+            <div className='flex justify-evenly '>
+              <HandleJobUpdate myPostedJob={myPostedJob}></HandleJobUpdate>
+              <HandleJobDelete
+                myPostedJob={myPostedJob}
+                handleDelete={handleDelete}
+              ></HandleJobDelete>
+            </div>
           </div>
-
-          <p>{myPostedJob.description}</p>
-
-          <div className='flex justify-evenly '>
-            <HandleJobUpdate myPostedJob={myPostedJob}></HandleJobUpdate>
-            <HandleJobDelete
-              myPostedJob={myPostedJob}
-              handleDelete={handleDelete}
-            ></HandleJobDelete>
-          </div>
+        ))
+      ) : (
+        <div className='text-2xl text-center col-span-2 mt-28'>
+          Please
+          <Link to='/addJob'>
+            <span className='text-emerald-500'> Add Job </span>
+          </Link>
+          to see Your Posted Jobs.
         </div>
-      ))}
+      )}
     </div>
   );
 };

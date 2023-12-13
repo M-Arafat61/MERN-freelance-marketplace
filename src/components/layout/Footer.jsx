@@ -5,15 +5,11 @@ const Footer = () => {
         <nav className=' flex-col-reverse md:flex-row items-center gap-5'>
           <div className='flex-col flex gap-5 md:flex-row'>
             <div className='space-y-1'>
-              <img
-                className='w-52 md:w-36'
-                src='https://i.ibb.co/C8C9BTp/it-quester.png'
-                alt=''
-              />
+              <img className='w-52 md:w-36' src='logo.png' alt='' />
             </div>
             <div className='space-y-3 mb-5'>
               <div>
-                <p className='  '>ITQuester</p>
+                <p className='text-2xl font-bold'>JobHub</p>
                 <p>3/A,home-in-sky, Gulshan, Dhaka</p>
                 <p>Phone +88-2564-8565</p>
               </div>
@@ -56,14 +52,14 @@ const Footer = () => {
           </div>
         </nav>
         <nav className='flex flex-col'>
-          <header className='footer-title'>Services</header>
+          <header className='font-semibold text-xl'>Services</header>
           <a className='link link-hover'>Branding</a>
           <a className='link link-hover'>Design</a>
           <a className='link link-hover'>Marketing</a>
           <a className='link link-hover'>Advertisement</a>
         </nav>
         <nav className='flex flex-col'>
-          <header className='footer-title'>Company</header>
+          <header className='font-semibold text-xl'>Company</header>
           <a className='link link-hover'>About us</a>
           <a className='link link-hover'>Contact</a>
           <a className='link link-hover'>Jobs</a>

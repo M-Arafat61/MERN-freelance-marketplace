@@ -8,10 +8,9 @@ const PrivateRoute = ({ children }) => {
   const location = useLocation();
   if (loading) {
     return (
-      <RiseLoader
-        className='min-h-screen flex justify-center items-center'
-        color='#36d7b7'
-      />
+      <div className='min-h-screen flex justify-center items-center'>
+        <RiseLoader className='' color='#36d7b7' />
+      </div>
     );
   }
 

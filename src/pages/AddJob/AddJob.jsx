@@ -143,7 +143,7 @@ const AddJob = () => {
             </div>
             <div className='form-control mt-6'>
               <button
-                className='py-2 bg-teal-200 rounded-md overflow-hidden input input-bordered'
+                className='font-bold text-2xl py-2 bg-teal-200 rounded-md overflow-hidden input hover:bg-teal-300  hover:text-white'
                 type='submit'
               >
                 Add Job

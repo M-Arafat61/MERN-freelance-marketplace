@@ -3,9 +3,10 @@ import useAuthContext from "../../hooks/useAuthContext";
 import useAxiosInstance from "../../hooks/useAxiosInstance";
 import "react-step-progress-bar/styles.css";
 import { ProgressBar } from "react-step-progress-bar";
+import { Link } from "react-router-dom";
 
 const BidRequests = () => {
-  document.title = "IT-Quester | Bid Requests";
+  document.title = "JobHub | Bid Requests";
   const [bidRequest, setBidRequest] = useState([]);
   const axiosInstance = useAxiosInstance();
   const { user } = useAuthContext();
@@ -24,7 +25,7 @@ const BidRequests = () => {
     };
     fetchBids();
   }, [axiosInstance, user?.email]);
-  console.log(bidRequest);
+  // console.log(bidRequest);
 
   const handleAcceptBidRequest = async id => {
     try {
@@ -63,77 +64,87 @@ const BidRequests = () => {
   return (
     <div className=' mx-auto max-w-7xl p-2 '>
       <div className='my-20'>
-        <table className='m-auto table-xs md:table-md'>
-          <thead>
-            <tr>
-              <th></th>
-              <th>Job title</th>
-              <th>Applicant email</th>
-              <th>Expected amount</th>
-              <th>Deadline</th>
-              <th>Status</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {bidRequest.map((bid, i) => (
-              <tr key={bid._id}>
-                <th>{i + 1}</th>
-                <td>{bid?.title}</td>
-                <td>{bid.userEmail}</td>
-                <td>${bid.amount}</td>
-                <td>{bid.applicationDeadline}</td>
-                <td className={bid.status ? "text-emerald-500" : ""}>
-                  {bid.status}
-                </td>
+        {bidRequest.length > 0 ? (
+          <table className='m-auto table-xs md:table-md'>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Job title</th>
+                <th>Applicant email</th>
+                <th>Expected amount</th>
+                <th>Deadline</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {bidRequest.map((bid, i) => (
+                <tr key={bid._id}>
+                  <th>{i + 1}</th>
+                  <td>{bid?.title}</td>
+                  <td>{bid.userEmail}</td>
+                  <td>${bid.amount}</td>
+                  <td>{bid.applicationDeadline}</td>
+                  <td className={bid.status ? "text-emerald-500" : ""}>
+                    {bid.status}
+                  </td>
 
-                <td>
-                  {(bid.status === "accepted" && (
-                    <>
-                      <p>in progress</p>
-                      <ProgressBar
-                        filledBackground='linear-gradient(to right, #ffd966 50%, #3DB8D1  100%)'
-                        percent={65}
-                      />
-                    </>
-                  )) ||
-                    (bid.status === "complete" && (
+                  <td>
+                    {(bid.status === "accepted" && (
                       <>
-                        <p>completed</p>
+                        <p>in progress</p>
                         <ProgressBar
-                          filledBackground='linear-gradient(to right, #8FFFFF 50%, #3DB8D1  100%)'
-                          percent={100}
+                          filledBackground='linear-gradient(to right, #ffd966 50%, #3DB8D1  100%)'
+                          percent={65}
                         />
                       </>
-                    ))}
-                  <button
-                    onClick={() => handleAcceptBidRequest(bid._id)}
-                    className={
-                      bid.status
-                        ? "hidden"
-                        : "center rounded-l-2xl  btn btn-sm capitalize shadow-md  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    }
-                  >
-                    Accept
-                  </button>
-                </td>
+                    )) ||
+                      (bid.status === "complete" && (
+                        <>
+                          <p>completed</p>
+                          <ProgressBar
+                            filledBackground='linear-gradient(to right, #8FFFFF 50%, #3DB8D1  100%)'
+                            percent={100}
+                          />
+                        </>
+                      ))}
+                    <button
+                      onClick={() => handleAcceptBidRequest(bid._id)}
+                      className={
+                        bid.status
+                          ? "hidden"
+                          : "center rounded-l-2xl  btn btn-sm capitalize shadow-md  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                      }
+                    >
+                      Accept
+                    </button>
+                  </td>
 
-                <td>
-                  <button
-                    onClick={() => handleRejectBidRequest(bid._id)}
-                    className={
-                      bid.status
-                        ? "hidden"
-                        : "center rounded-l-2xl bg-teal-400 btn-sm capitalize shadow-md shadow-blue-500/20 transition-all font-bold text-white  hover:shadow-teal-400 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    }
-                  >
-                    Reject
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                  <td>
+                    <button
+                      onClick={() => handleRejectBidRequest(bid._id)}
+                      className={
+                        bid.status
+                          ? "hidden"
+                          : "center rounded-l-2xl bg-teal-400 btn-sm capitalize shadow-md shadow-blue-500/20 transition-all font-bold text-white  hover:shadow-teal-400 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                      }
+                    >
+                      Reject
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <div className='text-2xl text-center col-span-2 mt-28'>
+            Please
+            <Link to='/addJob'>
+              <span className='text-emerald-500'> Please Add Job </span>
+            </Link>
+            so that users can bid your jobs.
+          </div>
+        )}
       </div>
     </div>
   );

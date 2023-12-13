@@ -4,15 +4,11 @@ import useAuthContext from "../../hooks/useAuthContext";
 const Sidebar = () => {
   const { user } = useAuthContext();
   return (
-    <div className='flex flex-col gap-2'>
-      <div>
-        <img
-          className='w-36'
-          src='https://i.ibb.co/C8C9BTp/it-quester.png'
-          alt=''
-        />
+    <div className='flex flex-col gap-2 text-2xl'>
+      <div className='flex flex-col items-center space-y-5'>
+        <img className='' src='logo.png' alt='' />
+        <p className=' text-3xl  font-bold tracking-wider'>JobHub</p>
       </div>
-      <p className=' text-xl font-bold ml-2'>ITQuester</p>
       <hr className='w-full border-black'></hr>
       <li>
         <NavLink

@@ -4,7 +4,7 @@ import Newsletter from "./Newsletter";
 import Feedback from "./Feedback";
 
 const Home = () => {
-  document.title = "IT-Quester | Home";
+  document.title = "JobHub | Home";
   return (
     <div>
       <Banner></Banner>

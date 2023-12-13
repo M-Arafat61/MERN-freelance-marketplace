@@ -83,7 +83,7 @@ const Category = () => {
                       alt={"category image"}
                     />
                   </div>
-                  <p className='text-lg font-bold capitalize'>
+                  <p className='text-base md:text-lg font-bold capitalize'>
                     {category.name}
                   </p>
                 </div>
@@ -111,7 +111,7 @@ const Category = () => {
                   <div className=''>
                     <p className='mb-3'>Deadline {job.deadline}</p>
                     <Link to={`/jobs/${job._id}`}>
-                      <button className='flex flex-row items-center text-start "middle none text-base-200 center rounded-r-2xl bg-teal-400 py-3 px-6 font-sans  font-bold capitalize shadow-md shadow-teal-500/20 transition-all  hover:shadow-teal-400 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'>
+                      <button className='flex flex-row items-center text-start "middle none text-base-200 center rounded-r-full bg-teal-400 py-3 px-6 font-sans  font-bold capitalize shadow-md shadow-teal-500/20 transition-all  hover:shadow-teal-400 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'>
                         Bid now
                         <TbHandFinger className='ml-2 text-black text-2xl' />
                       </button>

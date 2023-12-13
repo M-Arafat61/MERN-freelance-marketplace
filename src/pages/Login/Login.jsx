@@ -6,7 +6,7 @@ import useAuthContext from "../../hooks/useAuthContext";
 import { useState } from "react";
 
 const Login = () => {
-  document.title = "IT-Quester | Login";
+  document.title = "JobHub | Login";
   const [error, setError] = useState(null);
   const { userLogin, googleLogin } = useAuthContext();
   const navigate = useNavigate();

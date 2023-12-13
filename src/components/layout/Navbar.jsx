@@ -14,16 +14,12 @@ const Navbar = () => {
       });
   };
   return (
-    <div className='max-w-7xl p-2 md:py-5 flex-grow gap-5 mx-auto'>
+    <div className='max-w-7xl p-2 md:py-5 flex-grow gap-5 mx-auto text-xl lg:text-2xl'>
       <div className='flex  md:flex-col lg:flex-row items-center'>
-        <div>
-          <img
-            className='w-52 md:w-36'
-            src='https://i.ibb.co/C8C9BTp/it-quester.png'
-            alt=''
-          />
+        <div className='hidden md:flex'>
+          <img className='w-full' src='/logo.png' alt='' />
         </div>
-        <p className='hidden md:flex text-xl font-bold ml-2'>ITQuester</p>
+        <p className='text-3xl tracking-wider font-bold ml-2'>JobHub</p>
       </div>
       <div className='flex w-full justify-center items-center'>
         <div className=' flex-none hidden md:block'>
@@ -97,7 +93,7 @@ const Navbar = () => {
           <>
             <label tabIndex={0} className='cursor-pointer'>
               <div className='avatar'>
-                <div className='w-12 rounded-full'>
+                <div className='w-16 md:w-12 rounded-full'>
                   <img src={user.photoURL} />
                 </div>
               </div>
@@ -105,7 +101,7 @@ const Navbar = () => {
 
             <div
               tabIndex={0}
-              className='dropdown-content z-[1] menu p-2 bg-teal-100 rounded-e-2xl w-52'
+              className='dropdown-content z-[1] menu p-2 bg-teal-100 rounded-e-2xl w-52 text-xl'
             >
               <NavLink className='px-4 py-2 hover:bg-base-300 rounded-lg'>
                 {user.displayName}
