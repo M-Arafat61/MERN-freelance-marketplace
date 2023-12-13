@@ -18,7 +18,7 @@ const MyPostedJobs = () => {
           `/myPostedJobs?email=${user?.email}`
         );
         setMyPostedJobs(response.data);
-        console.log(response.data);
+        // console.log(response);
       } catch (error) {
         console.log(error);
       }

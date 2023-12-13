@@ -5,8 +5,8 @@ import useAuthContext from "../../hooks/useAuthContext";
 const MyBids = () => {
   document.title = "IT-Quester | Bided Jobs";
   const [bidedJobs, setBidedJobs] = useState([]);
-  const [filterStatus, setFilterStatus] = useState("all");
-  const [sortOrder, setSortOrder] = useState("asc");
+  // const [filterStatus, setFilterStatus] = useState("all");
+  // const [sortOrder, setSortOrder] = useState("asc");
 
   const axiosInstance = useAxiosInstance();
   const { user } = useAuthContext();
@@ -14,21 +14,14 @@ const MyBids = () => {
   useEffect(() => {
     const fetchBidedJobs = async () => {
       try {
-        const queryParams = {
-          email: user?.email,
-          status: filterStatus,
-          sort: sortOrder,
-        };
-        const response = await axiosInstance.get("/myBids", {
-          params: queryParams,
-        });
+        const response = await axiosInstance.get(`/myBids/${user?.email}`);
         setBidedJobs(response.data);
       } catch (error) {
         console.log(error);
       }
     };
     fetchBidedJobs();
-  }, [axiosInstance, user?.email, filterStatus, sortOrder]);
+  }, [axiosInstance, user.email]);
 
   const handleCompleteJob = async id => {
     try {
@@ -47,14 +40,14 @@ const MyBids = () => {
       console.log(error);
     }
   };
-  console.log(bidedJobs);
-  const handleFilterChange = e => {
-    setFilterStatus(e.target.value);
-  };
-  const handleSortOrderChange = e => {
-    setSortOrder(e.target.value);
-  };
-  console.log(filterStatus);
+  // console.log(bidedJobs);
+  // const handleFilterChange = e => {
+  //   setFilterStatus(e.target.value);
+  // };
+  // const handleSortOrderChange = e => {
+  //   setSortOrder(e.target.value);
+  // };
+  // console.log(filterStatus);
   return (
     <div className=''>
       <div className='my-20  p-2 mx-auto max-w-7xl'>
@@ -65,8 +58,8 @@ const MyBids = () => {
             </label>
             <select
               id='statusFilter'
-              value={filterStatus}
-              onChange={handleFilterChange}
+              // value={filterStatus}
+              // onChange={handleFilterChange}
               className='select w-full max-w-xs'
             >
               <option value='all'>All</option>
@@ -82,8 +75,8 @@ const MyBids = () => {
             </label>
             <select
               id='sortOrder'
-              value={sortOrder}
-              onChange={handleSortOrderChange}
+              // value={sortOrder}
+              // onChange={handleSortOrderChange}
             >
               <option value='asc'>Ascending</option>
               <option value='desc'>Descending</option>

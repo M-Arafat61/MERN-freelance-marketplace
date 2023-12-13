@@ -10,14 +10,13 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../authentication/config.firebase";
-import useAxiosInstance from "../hooks/useAxiosInstance";
+import { axiosPublic } from "../hooks/useAxiosPublic";
 
 const googleProvider = new GoogleAuthProvider();
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const axiosInstance = useAxiosInstance();
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -44,15 +43,6 @@ const AuthProvider = ({ children }) => {
   const googleLogin = () => {
     return signInWithPopup(auth, googleProvider);
   };
-  const info = {
-    user,
-    loading,
-    createUser,
-    userLogin,
-    profileUpdate,
-    logOut,
-    googleLogin,
-  };
 
   // observer
   useEffect(() => {
@@ -60,13 +50,16 @@ const AuthProvider = ({ children }) => {
       const userEmail = currentUser?.email || user?.email;
       const loggedUser = { email: userEmail };
       setUser(currentUser);
-      console.log("current-user", currentUser);
+      // console.log("current-user from observer", currentUser?.email);
+      // console.log("current-user from user", user?.email);
       setLoading(false);
       if (currentUser) {
         const fetchJwt = async () => {
           try {
-            const response = await axiosInstance.post("/auth/jwt", loggedUser);
-            console.log(response);
+            await axiosPublic.post("/auth/jwt", loggedUser, {
+              withCredentials: true,
+            });
+            // console.log(response.config.data);
           } catch (error) {
             console.log(error);
           }
@@ -75,9 +68,12 @@ const AuthProvider = ({ children }) => {
       } else {
         const fetchLogout = async () => {
           try {
-            const response = await axiosInstance.post(
+            const response = await axiosPublic.post(
               "/auth/logout",
-              loggedUser
+              loggedUser,
+              {
+                withCredentials: true,
+              }
             );
             console.log(response.data);
           } catch (error) {
@@ -88,9 +84,20 @@ const AuthProvider = ({ children }) => {
       }
     });
     return () => {
-      unsubscribe();
+      return unsubscribe();
     };
-  }, [axiosInstance, user?.email]);
+  }, [user?.email]);
+
+  const info = {
+    user,
+    loading,
+    createUser,
+    userLogin,
+    profileUpdate,
+    logOut,
+    googleLogin,
+  };
+
   return (
     <div>
       <AuthContext.Provider value={info}>{children}</AuthContext.Provider>

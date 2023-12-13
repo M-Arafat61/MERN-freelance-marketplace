@@ -5,7 +5,9 @@ import Footer from "./components/layout/Footer";
 function App() {
   return (
     <MainLayout>
-      <Outlet></Outlet>
+      <div className='min-h-screen'>
+        <Outlet></Outlet>
+      </div>
       <div className=' rounded-t-3xl overflow-hidden'>
         <Footer></Footer>
       </div>

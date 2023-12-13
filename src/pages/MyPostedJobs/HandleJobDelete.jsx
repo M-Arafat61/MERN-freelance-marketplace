@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 const HandleJobDelete = ({ handleDelete, myPostedJob }) => {
-  console.log(myPostedJob);
+  // console.log(myPostedJob);
   const { _id } = myPostedJob;
   return (
     <div>

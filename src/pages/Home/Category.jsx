@@ -19,7 +19,7 @@ const Category = () => {
           `/jobs-by-category/${category}`
         );
         setJobData(response.data);
-        console.log(response.data);
+        // console.log(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -45,7 +45,7 @@ const Category = () => {
     fetchCategories();
   }, [axiosInstance, fetchJobData]);
 
-  console.log(jobData);
+  // console.log(jobData);
 
   return (
     <div className='mx-auto max-w-7xl my-5 md:my-10 p-2 md:p-10 lg:my-16'>
